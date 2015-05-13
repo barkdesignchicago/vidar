@@ -16,7 +16,7 @@
 
 // Set environment based on hostname
 switch ($hostname) {
-    case 'local.SITE.com.10.1.10.13.xip.io:8888/wp-admin/':
+    case 'local.vidarlaw.com.10.1.10.13.xip.io:8888':
         define('WP_ENV', 'development');
         break;
     
