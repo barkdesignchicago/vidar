@@ -39,7 +39,9 @@ gulp.task('scripts', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
    browserSync.init({
-        proxy: "dev.vidarlaw.com:8888"
+        proxy: "dev.vidarlaw.com:8888",
+        host: "localhost",
+        port: 8888
     });
     gulp.watch('assets/js/*.js', ['lint', 'scripts']);
     gulp.watch('assets/scss/*.scss', ['sass']);
