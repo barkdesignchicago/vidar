@@ -1,3 +1,10 @@
+
+var onError = function (err) {  
+  gutil.beep();
+  console.log(err);
+};
+
+
 // Include gulp
 var gulp = require('gulp'); 
 
@@ -8,33 +15,43 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var minifyCss = require('gulp-minify-css');
 var reload = browserSync.reload;
+var plumber = require('gulp-plumber');
+var gutil = require('gulp-util');
 
 // Lint Task
 gulp.task('lint', function() {
-    return gulp.src('assets/js/*.js')
+    gulp.src('assets/js/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
 
 // Compile Our Sass
 gulp.task('sass', function() {
+    gulp.src('assets/scss/*.scss')
+	    .pipe(plumber({
+	      errorHandler: onError
+	    }))
 
-    return gulp.src('assets/scss/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('assets/css'))
+		.pipe(sass().on('error', sass.logError))
+  		.pipe(minifyCss())
+		.pipe(gulp.dest('assets/css'))
         .pipe(reload({stream: true}));
+
 });
+
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src('assets/js/*.js')
+    gulp.src('assets/js/*.js')
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist'))
         .pipe(rename('all.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('assets/dist'));
 });
+
 
 // Watch Files For Changes
 gulp.task('watch', function() {

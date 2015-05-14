@@ -25,13 +25,16 @@
     "gulp-concat": "^2.5.2",
     "gulp-jshint": "^1.10.0",
     "gulp-livereload": "^0.3.2",
+    "gulp-minify-css": "^0.2.0",
+    "gulp-plumber": "^1.0.0",
     "gulp-rename": "^0.2.2",
     "gulp-sass": "^2.0.0",
-    "gulp-uglify": "^0.2.1"
+    "gulp-uglify": "^0.2.1",
+    "gulp-util": "^3.0.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Shaun Rowe @ Bark Design",
   "license": "ISC"
 }

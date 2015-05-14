@@ -12,7 +12,7 @@ $tablet-max-breakpoint: $desktop-container-width - 1 !default;
 $mobile-max-breakpoint: $tablet-container-width - 1 !default;
 
 // #Form Variables
-$form_element_font: Arial, sans-serif !default;
+$form_element_font: 'Source Sans Pro', sans-serif !default;
 
 // ##button
 $form_button_border_radius: 3px !default;
@@ -84,7 +84,7 @@ $link_hover_color: #000 !default;
 $link_hover_decoration: none !default;
 
 // #Headings
-$heading_font: Arial, sans-serif !default;
+$heading_font: 'Source Sans Pro', sans-serif !default;
 $heading_font_weight: normal !default;
 $heading_color: #181818 !default;
 
@@ -147,7 +147,7 @@ $hr_border_width: 1px 0 0 !default;
 $hr_margin: 10px 0 30px !default;
 
 // #Main font
-$body_font_family: Arial, sans-serif !default;
+$body_font_family: 'Source Sans Pro', sans-serif !default;
 
 // #Lists
 $list_margin: 0 0 20px 0 !default;
