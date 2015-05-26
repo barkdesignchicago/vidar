@@ -30,7 +30,8 @@
     "gulp-rename": "^0.2.2",
     "gulp-sass": "^2.0.0",
     "gulp-uglify": "^0.2.1",
-    "gulp-util": "^3.0.4"
+    "gulp-util": "^3.0.4",
+    "node-bourbon": "^4.2.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -40,14 +40,30 @@
 
 	<!-- Header / Nav / Global Etc
 	================================================== -->
-	<div class="container">
-		<div class="sixteen columns">
-			<div id="logo">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ) ?>" rel="home"><?php bloginfo( 'name' ) ?></a>
+	<div class="big-container full-width utility-container">
+		<div class="container">
+			<div class="twelve columns">
+				<section>
+					<nav>
+						<div id="utility-nav" class="nav">
+							<?php wp_nav_menu( array( 'theme_location' => 'utility-menu', 'menu_class' => 'utility-menu' ) ); ?>
+						</div>
+					</nav>
+				</section>
 			</div>
 		</div>
-		<div class="sixteen columns">
-			<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+	</div>
+	<div class="big-container full-width main-nav-container">
+		<div class="container">
+			<div class="twelve columns">
+				<section>
+					<nav>
+						<div id="main-nav" class="nav">
+							<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'menu' ) ); ?>
+						</div>
+					</nav>
+				</section>
+			</div>
 		</div>
 	</div>
 	<!-- End Header -->

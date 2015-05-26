@@ -1,7 +1,7 @@
 
 var onError = function (err) {  
   gutil.beep();
-  console.log(err);
+  console.log(gutil.colors.red(err));
 };
 
 
@@ -19,6 +19,7 @@ var minifyCss = require('gulp-minify-css');
 var reload = browserSync.reload;
 var plumber = require('gulp-plumber');
 var gutil = require('gulp-util');
+var bourbon = require('node-bourbon').includePaths;
 
 // Lint Task
 gulp.task('lint', function() {
@@ -31,10 +32,13 @@ gulp.task('lint', function() {
 gulp.task('sass', function() {
     gulp.src('assets/scss/*.scss')
 	    .pipe(plumber({
-	      errorHandler: onError
+	      errorHandler: onError,
+
 	    }))
 
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass({
+			includePaths: ['sass'].concat(bourbon)
+			}).on('error', sass.logError))
   		.pipe(minifyCss())
 		.pipe(gulp.dest('assets/css'))
         .pipe(reload({stream: true}));

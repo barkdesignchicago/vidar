@@ -11,6 +11,17 @@ $base_font_size: 12px !default;
 $tablet-max-breakpoint: $desktop-container-width - 1 !default;
 $mobile-max-breakpoint: $tablet-container-width - 1 !default;
 
+// #Colors
+$body_text_color: tint(rgba(0,0,0,1), 85%);
+$grey: rgba(149,160,169, 1);
+$med_grey: tint( $grey, 75% );
+$blue_grey: rgba(66, 89, 104, 1);
+$white: rgba(255, 255, 255, 1);
+$bg_gradient_start: rgba(255, 255, 255, 1);
+$bg_gradient_end: rgba(228, 231, 234, 1);
+$yellow: rgba(222, 206, 34, 1);
+$light_yellow: tint($yellow, 70%);
+
 // #Form Variables
 $form_element_font: 'Source Sans Pro', sans-serif !default;
 
@@ -78,7 +89,7 @@ $form_textarea_min_height: 60px !default;
 
 // #Links
 $link_color: #333 !default;
-$link_decoration: underline !default;
+$link_decoration: none !default;
 $link_outline: 0 !default;
 $link_hover_color: #000 !default;
 $link_hover_decoration: none !default;
@@ -127,7 +138,7 @@ $em_font_style: italic !default;
 
 $small_font_size: 80% !default;
 
-$strong_color: #333 !default;
+$strong_color: inherit !default;
 
 // #Blockquotes
 $blockquote_color: #777 !default;
@@ -166,7 +177,7 @@ $list_item_line_height: 18px !default;
 $list_item_margin: 0 0 12px 0 !default;
 $list_item_paragraph_line_height: 21px !default;
 
-$fallback_hex_gradient_bg: #CCC !default;
+$fallback_hex_gradient_bg: #FFF !default;
 
 // #Tables
 $table_background: #FFF !default;

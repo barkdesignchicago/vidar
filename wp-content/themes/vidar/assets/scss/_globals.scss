@@ -1,10 +1,21 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
 // #General body style
 body {
-  background: #fff;
-  font: 14px/21px $body_font_family;
-  color: #444;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+	@include vertical-gradient($bg_gradient_start, $bg_gradient_end);
+	font: 14px/21px $body_font_family;
+	color: #444;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 }
 
 // #General horizontal rule style
@@ -15,4 +26,252 @@ hr {
   margin: $hr_margin;
   height: 0;
 }
+
+// #Navigation 
+
+.utility-container{
+	background-color:$med_grey;
+}
+
+#utility-nav{
+	padding:10px 0;
+	text-align:right;
+	li{
+		display:inline;
+		margin:0;
+		padding:10px;
+		a{
+			color:$blue_grey;
+		}
+		
+	}
+}
+
+.main-nav-container{
+}
+
+#main-nav{
+	a{
+		text-transform: uppercase;
+		font-weight:700;
+		font-size:16px;
+	}
+	
+	li {
+		a{
+		}
+		li{
+			a{
+				text-transform: none;
+				font-weight:400;
+				font-size:14px;
+			}
+		}
+	}
+	.menu{
+		margin:50px 0 42px;
+	}
+	.logo-image{	
+		margin-top:-18px;
+	}
+	.logo-image-not-home{
+		margin-top:-11px;
+		a{
+			padding-right:.6em;
+			
+		}
+		
+	}
+}
+
+.nav{
+	ul{
+		margin:0;		
+	}	
+	li{
+		
+	}
+}
+
+// #Home
+
+#home-hero{
+	height:471px;
+	font-size:48px;
+	line-height: 62px;
+	position:relative;
+	border:7px solid $blue_grey;
+	h1{
+		color:#fff;
+		font-size:48px;
+		span{
+			color:$yellow;
+		}
+	}
+	#hero-text{
+		position:absolute;
+		top:25%;
+		left:80px;
+		z-index:100;
+		color:#fff;
+		span{
+			color:$yellow;
+		}
+	}
+}
+
+#home-intro-container{
+	padding:0 20px;
+	height:471px;
+	background-color:$blue_grey;
+	border: 7px solid $grey;
+	color:$white;
+	font-size:16px;
+	line-height:22px;
+	p{
+		margin-bottom:10px !important;
+		&:first-child{
+			padding-top:20px;
+			font-size:22px;
+			line-height:26px;
+			font-weight:300;
+			color:$grey;
+			span{
+				background-color:$yellow;
+				color:$blue_grey;
+			}
+		}
+		a{
+			color:#fff;
+			font-weight:600;
+		}
+	}
+}
+
+#home-blog-container{
+	h1{
+		font-size:22px;
+		line-height:24px;
+		font-weight:600;
+		color:$blue_grey;
+		span{
+			color:$grey;
+		}
+	}
+	h2{
+		padding-top:10px;
+		font-size:22px;
+		line-height:24px;
+		font-weight:300;
+		color:$blue_grey;
+	}
+	p{
+		line-height:18px;
+	}
+	img{
+		border:4px solid $white;
+	}	
+}
+
+
+// #Box Containers (Callouts)
+
+.quote-container{
+	padding:40px;
+	border:7px solid $blue_grey;
+	background-image:url(http://placehold.it/780x346/425968/000000);
+	background-position: center center;
+	background-repeat:no-repeat;
+	p{
+		margin-bottom:5px;
+		font-size:22px;
+		font-weight:300;
+		color:$white;
+		a{
+			font-size:16px;
+			color:#fff;
+			font-weight:600;
+		}
+	}
+}
+
+.bio-container{
+	background-color:$blue_grey;
+	border:7px solid $grey;
+	h1{
+		padding:13px 40px 20px 20px;
+		font-size:14px;
+		font-weight:600;
+		line-height:14px;
+		color:$white;
+		text-transform: uppercase;
+		background-color:$grey;
+		span{
+			color:$yellow;
+		}
+	}
+	img{
+		float:left;
+		padding:10px 20px 0;
+	}
+	p{
+		margin:0;
+		padding:5px 20px 15px;
+		color:#fff;
+		&:last-child{
+			padding-bottom:20px;
+		}
+		a{
+			font-size:16px;
+			color:#fff;
+			font-weight:600;
+		}
+	}
+}
+
+
+// #Footer
+
+.footer{
+	margin-top:60px;
+	padding:37px 0 100px;
+	background-color:$white;	
+	color:$blue_grey;
+	font-weight:300;
+	p{
+		font-size:12px;
+		line-height:14px;
+		font-weight:300;
+	}
+	a{
+		font-weight:600;
+		color:$blue_grey;
+	}
+	.address{
+		
+	}
+	.contact{
+		color:$grey;
+		font-weight:600;
+	}
+	.footer-menu{
+		margin:0;
+		padding:0;
+		li{
+			margin-bottom:5px;
+		}
+		a{
+			color:$grey;
+			text-transform: uppercase;		
+		}
+	}
+	.footer-utility{
+		@extend .footer-menu;
+		a{
+			font-weight:300;
+		}
+	}
+}
+
+
 
