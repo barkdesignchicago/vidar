@@ -109,6 +109,18 @@
   background-repeat: repeat-x;
 }
 
+@mixin vertical-gradient-image($startcolor, $endcolor, $image) {
+  background-color: $fallback_hex_gradient_bg;
+  background-color: mix($startcolor, $endcolor, 60%);
+  background-image: url($image), -webkit-gradient(linear, 0 0, 0 100%, from($startcolor), to($endcolor));
+  background-image: url($image), -webkit-linear-gradient(top, $startcolor, $endcolor);
+  background-image: url($image), -moz-linear-gradient(top, $startcolor, $endcolor);
+  background-image: url($image), -o-linear-gradient(top, $startcolor, $endcolor);
+  background-image: url($image), linear-gradient(to bottom, $startcolor, $endcolor);
+  background-repeat: no-repeat, repeat-x;
+}
+
+
 @mixin box-shadow($a, $b, $c, $color) {
   -moz-box-shadow: $a $b $c $color;
   -webkit-box-shadow: $a $b $c $color;

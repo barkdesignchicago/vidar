@@ -11,11 +11,12 @@ html {
 
 // #General body style
 body {
-	@include vertical-gradient($bg_gradient_start, $bg_gradient_end);
-	font: 14px/21px $body_font_family;
+	font: 16px/22px $body_font_family;
+	font-weight:300;
 	color: #444;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
+	@include vertical-gradient-image($bg_gradient_start, $bg_gradient_end, '../images/bg_top_left.png');
 }
 
 // #General horizontal rule style
@@ -27,6 +28,15 @@ hr {
   height: 0;
 }
 
+abbr{
+	border:0 !important;
+}
+
+.read-more{
+	font-weight:600;
+	color:$blue_grey;
+}
+
 // #Navigation 
 
 .utility-container{
@@ -36,6 +46,7 @@ hr {
 #utility-nav{
 	padding:10px 0;
 	text-align:right;
+	font-size:14px;
 	li{
 		display:inline;
 		margin:0;
@@ -45,6 +56,20 @@ hr {
 		}
 		
 	}
+	.utility-menu{
+		float:right;
+	}
+	.social-media-links{
+		margin:0;
+		padding:0;
+		float:right;
+		img{
+			vertical-align: middle;
+		}
+		li{
+			padding:0 4px;
+		}
+	}
 }
 
 .main-nav-container{
@@ -53,18 +78,36 @@ hr {
 #main-nav{
 	a{
 		text-transform: uppercase;
-		font-weight:700;
+		font-weight:600;
 		font-size:16px;
 	}
 	
 	li {
 		a{
+			&:hover{
+				color:$yellow;
+			}
 		}
 		li{
 			a{
 				text-transform: none;
 				font-weight:400;
 				font-size:14px;
+				&:hover{
+					color:$blue_grey;
+				}
+			}
+		}
+		&.current-page-parent{
+		}
+		&.current-menu-item{
+			a{
+				text-decoration: underline;
+			}
+			li{
+				a{
+					text-decoration: none;
+				}
 			}
 		}
 	}
@@ -103,7 +146,7 @@ hr {
 	border:7px solid $blue_grey;
 	h1{
 		color:#fff;
-		font-size:48px;
+		font-size:55px;
 		span{
 			color:$yellow;
 		}
@@ -154,6 +197,9 @@ hr {
 		line-height:24px;
 		font-weight:600;
 		color:$blue_grey;
+		a{
+			color: $blue_grey;
+		}
 		span{
 			color:$grey;
 		}
@@ -177,7 +223,7 @@ hr {
 // #Box Containers (Callouts)
 
 .quote-container{
-	padding:40px;
+	padding:25px;
 	border:7px solid $blue_grey;
 	background-image:url(http://placehold.it/780x346/425968/000000);
 	background-position: center center;
@@ -185,6 +231,7 @@ hr {
 	p{
 		margin-bottom:5px;
 		font-size:22px;
+		line-height:28px;
 		font-weight:300;
 		color:$white;
 		a{
@@ -193,6 +240,17 @@ hr {
 			font-weight:600;
 		}
 	}
+}
+
+.quote-block{
+	font-size:18px;
+	line-height:22px;
+	color:$blue_grey;
+	span{
+		font-size:16px;
+		color:$body_text_color;
+	}
+	
 }
 
 .bio-container{
@@ -208,6 +266,8 @@ hr {
 		background-color:$grey;
 		span{
 			color:$yellow;
+			text-transform: capitalize;
+
 		}
 	}
 	img{
@@ -229,6 +289,160 @@ hr {
 	}
 }
 
+.intro-block{
+	@extend .quote-container;
+	min-height:150px;
+	color:$white;
+	border:7px solid $grey;
+	strong{
+		font-weight:600;
+		color:$blue_grey;
+		background-color:tint($yellow, 25%);
+	}
+}
+
+.callout-block{
+	padding:20px;
+	ul{
+		margin-bottom:12px;
+	}
+	li{
+		&:last-child{
+			margin-bottom:0;	
+			}
+	}
+}
+
+.blog-box{
+	.row{
+		background-color:$blue_grey;
+	}
+	.image{
+		text-align:right;
+		padding:25px 0 15px 25px;
+	}
+	.content{
+		color:$white;
+	}
+	.border-box{
+		border:7px solid $grey;	
+		background-color:$blue_grey;
+	}
+	h2{
+		margin:0;
+		padding:15px 0 0;
+		a{
+			color:$yellow;
+		}
+	}
+	.entry-date{
+		font-weight:$white;
+		font-size:14px;
+		abbr{
+			border:none;
+			font-weight:600;
+		}
+		
+	}
+	.entry-content{
+		border-bottom:1px solid $grey;	
+		a{
+			color:$yellow !important;
+		}
+		.read-more{
+			color:$yellow !important;
+		}
+	}
+	.entry-categories{
+		font-size:12px;
+		ul{
+			margin:15px 0 0;
+			padding:0;
+			font-weight:700;
+		}
+		li{
+			display:inline;
+			
+		}
+		a{
+			color: $yellow;
+		}
+	}
+	.entry-tags{
+		@extend .entry-categories;
+		ul{
+			margin:0 0 15px;
+		}
+	}
+	span{
+		&.read-more{
+			display:block;
+			padding:15px 0 0;
+			font-weight:600;
+		}
+	}
+}
+
+// #Single Post
+
+.single{
+	.single-title{
+		margin:0 0 5px;
+		padding:0;
+		line-height:48px;
+	}
+	.entry-meta{
+		margin-bottom:15px;
+		font-weight:600;
+		color: $blue_grey;
+		
+	}
+	.content{
+		a{
+			color:$blue_grey;
+			font-weight:600;
+		}
+	}
+	.entry-categories{
+		border-top:1px solid $grey;
+		padding-top:15px;
+		ul{
+			margin:0;
+			padding:0;
+		}
+	}
+	.entry-tags{
+		ul{
+			margin:0;
+			padding:0;
+		}
+		
+	}
+}
+
+// #Archive
+
+	.archive{
+
+		.page-title{
+			span{
+				color:$grey;
+				font-weight:600;
+			}
+		}
+		
+	}
+
+// #Case Study
+
+	.case-study-excerpt{
+		padding-bottom:25px;
+		border-bottom:7px solid $blue_grey;
+		&:last-child{
+			border:0;
+		}
+	}
+
 
 // #Footer
 
@@ -238,6 +452,7 @@ hr {
 	background-color:$white;	
 	color:$blue_grey;
 	font-weight:300;
+	font-size:12px;
 	p{
 		font-size:12px;
 		line-height:14px;
@@ -247,8 +462,11 @@ hr {
 		font-weight:600;
 		color:$blue_grey;
 	}
+	li{
+		list-style-type: none;
+	}
 	.address{
-		
+		font-size:14px;
 	}
 	.contact{
 		color:$grey;
@@ -263,6 +481,9 @@ hr {
 		a{
 			color:$grey;
 			text-transform: uppercase;		
+			&:hover{
+				color:$blue_grey;
+			}
 		}
 	}
 	.footer-utility{

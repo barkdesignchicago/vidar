@@ -199,5 +199,47 @@ function wp_load_javascript_files() {
 */
 }
 
+// Creates the sub-nav menu bar on both top and sidebar
+function the_sub_nav($id, $depth, $title=false, $title_depth=""){
+	$ancestor_id=$id;
+	$descendants = get_pages(array('child_of' => $ancestor_id));
+	$incl = "";
+	foreach ($descendants as $page) {
+	   if (($page->post_parent == $ancestor_id) ||
+	       ($page->post_parent == $post->post_parent) ||
+	       ($page->post_parent == $post->ID))
+	   {
+	      $incl .= $page->ID . ",";
+	   }
+	}
+	if ($title==true){
+		$parent = get_post($post->post_parent);
+		$parent_title = get_the_title($parent);
+		$parent_link = get_permalink($parent);
+		$grandparent = $parent->post_parent;
+		$grandparent_title = get_the_title($grandparent);
+		$grandparent_link = get_permalink($grandparent);
+
+		if ($title_depth=="tertiary"){
+			$output .= "<a href='".$grandparent_link."' class='sidebar-header'>".$grandparent_title."</a>";
+			$class = "sidebar-subnav sidebar-" .sanitize_title($grandparent_title);
+		}
+		else{
+			$output .= "<a href='".$parent_link."' class='sidebar-header'>".$parent_title."</a>";			
+			$class = "sidebar-subnav sidebar-" .sanitize_title($parent_title);
+		}
+	}
+	else{
+		// Nothing
+	}
+	?>
+	<ul class="widget-area side-nav">
+		<?php
+		wp_list_pages(array("child_of" => $ancestor_id, "include" => $incl, "link_before" => "", "sort_column" => "menu_order", 'depth' => $depth, 'title_li' => $output));
+		?>
+	</ul>
+	<?php
+}
+
 
 
