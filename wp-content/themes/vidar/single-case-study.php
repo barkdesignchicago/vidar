@@ -18,16 +18,16 @@
 				<?php include('includes/dynamic-layout.php'); ?>	
 
 
+<!--
 				<div class="entry-categories">
-					<ul>
-					Categories: <?php the_category(', '); ?>
-					</ul>								
+					Filed Under: <?php the_category(', '); ?>
 				</div>
 				<div class="entry-tags">
 					<ul>
-						<?php the_tags( 'Tags: ', ', ', '' ); ?> 
+						<?php the_tags( 'Tagged as: ', ', ', '' ); ?> 
 					</ul>								
 				</div>
+-->
 
 			</section>
 		</div>
