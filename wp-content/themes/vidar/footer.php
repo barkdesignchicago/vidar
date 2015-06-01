@@ -3,7 +3,7 @@
 	<div class="big-container full-width footer">
 		<div class="container">
 			<div class="one column">
-				<img src="<?php bloginfo('template_directory'); ?>/assets/images/logo_vidar_wolf.png" alt="Vidar Law Wolf Logo" width="31" height="40" />
+<!-- 				<img src="<?php bloginfo('template_directory'); ?>/assets/images/logo_vidar_wolf.png" alt="Vidar Law Wolf Logo" width="31" height="40" /> -->
 			</div>
 			<div class="three columns copyright">
 				<p>

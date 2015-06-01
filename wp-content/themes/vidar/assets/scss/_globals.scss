@@ -100,6 +100,21 @@ abbr{
 		}
 		&.current-page-parent{
 		}
+		&.current_page_ancestor{
+			a{
+				text-decoration: underline
+			}
+			li{
+				a{
+					text-decoration: none;
+				}
+				&.current-menu-item{
+					a{
+						text-decoration: underline;
+					}
+				}
+			}
+		}
 		&.current-menu-item{
 			a{
 				text-decoration: underline;
@@ -422,32 +437,31 @@ abbr{
 
 // #Archive
 
-	.archive{
+.archive{
 
-		.page-title{
-			span{
-				color:$grey;
-				font-weight:600;
-			}
+	.page-title{
+		span{
+			color:$grey;
+			font-weight:600;
 		}
-		
 	}
+	
+}
 
 // #Case Study
 
-	.case-study-excerpt{
-		padding-bottom:25px;
-		border-bottom:7px solid $blue_grey;
-		&:last-child{
-			border:0;
-		}
+.case-study-excerpt{
+	padding-bottom:25px;
+	border-bottom:7px solid $blue_grey;
+	&:last-child{
+		border:0;
 	}
+}
 
 
 // #Footer
 
 .footer{
-	margin-top:60px;
 	padding:37px 0 100px;
 	background-color:$white;	
 	color:$blue_grey;
