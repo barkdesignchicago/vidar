@@ -24,7 +24,7 @@ switch ($hostname) {
         define('WP_ENV', 'staging');
         break;
 
-    case 'www.domain.com':
+    case 'www.vidarlaw.com':
     default: 
         define('WP_ENV', 'production');
 }
