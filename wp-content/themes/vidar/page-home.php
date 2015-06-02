@@ -16,11 +16,8 @@ Template Name: Home Page
 						<div id="home-hero" style="background-image:url(<?php bloginfo('template_directory'); ?>/assets/images/bg_hero.png); background-position:center center; background-size:cover;">
 							<div id="hero-text">
 								<header>
-									<h1>
-										Experience.<br />
-										Innovation.<br />
-										<span>Results.</span>
-									</h1>
+									<?php the_field('intro_block'); ?>
+
 								</header>
 							</div>
 						</div>
@@ -29,15 +26,7 @@ Template Name: Home Page
 				<div class="four columns">
 					<section>
 						<div id="home-intro-container">
-							<p>
-								<span>Vidar Law Group</span>, based in Chicago, has been representing businesses in commercial litigation matters and business transactions for more than a dozen years. 
-							</p>
-							<p>
-								Our attorneys were trained at some of the top law schools and some of the biggest law firms in the country. Vidar Law Group was founded in order to combine its attorneys&rsquo; strong traditional background and education with the latest technology and entrepreneurial innovation.  
-							</p>
-							<p>
-								<a href="#">See more &raquo;</a>
-							</p>
+							<?php the_field('callout'); ?>
 						</div>
 					</section>
 				</div>
@@ -108,6 +97,8 @@ Template Name: Home Page
 										<p><?php _e( 'Sorry, There are no blog posts right now. Please try again later.' ); ?></p>
 										<?php 
 									endif; 
+									wp_reset_postdata();
+
 									?>
 							</aside>
 						</div>
@@ -118,12 +109,7 @@ Template Name: Home Page
 				<div class="seven columns">
 					<section>
 						<div class="quote-container">
-							<p>
-								Businesses cannot be successful if they don&rsquo;t fully understand their expenses. Legal fees are a necessary component of any business, but unlike other law firms, Vidar believes those fees should be as transparent as possible... 
-							</p>
-							<p>
-								<a href="#">See more &raquo;</a>
-							</p>
+							<?php the_field('quote_text'); ?>
 						</div>
 					</section>
 				</div>
@@ -131,14 +117,9 @@ Template Name: Home Page
 					<section>
 						<aside>
 							<div class="bio-container clearfix">
-								<h1>Chris Werner <span>\ Founding Partner</span></h1>
+								<h1><?php the_field('bio_title'); ?></h1>
 								<img src="http://placehold.it/120x155" class="scale-with-grid" />
-								<p>
-									&ldquo;Lorem ipsum dolor sit amet, cons ectetur adipiscing elit. Suspendisse vel maximus ex, at blandit diam. Pellen tesque imperdiet auctor lorem, eu digni ssim turpis auctor pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo; 
-								</p>
-								<p>
-									<a href="#">See more &raquo;</a>
-								</p>
+								<?php the_field('bio_text'); ?>
 							</div>
 						</aside>
 					</section>
