@@ -76,9 +76,10 @@ Template Name: Home Page
 									$the_query = new WP_Query($args); ?>
 									<?php 
 									if ( $the_query->have_posts() ) :
+										$i=0;
 										while ( $the_query->have_posts() ) : $the_query->the_post();
 											?>
-											<div class="four columns alpha">
+											<div class="four columns <?php echo ($i == 0 ? 'alpha' : 'omega') ?>">
 
 												<?php 
 												if ( has_post_thumbnail() ) : 
@@ -100,6 +101,7 @@ Template Name: Home Page
 												</div>
 											</div>
 											<?php 
+											$i++;
 										endwhile; 
 									else: 
 										?>
