@@ -119,7 +119,7 @@ Template Name: Home Page
 				<div class="seven columns">
 					<section>
 						<?php
-							$quoteimage = get_field('hero_image');
+							$quoteimage = get_field('quote_background');
 							if( !empty($quoteimage) ): 
 								$quote_bg_image = $quoteimage['url'];
 							else:
