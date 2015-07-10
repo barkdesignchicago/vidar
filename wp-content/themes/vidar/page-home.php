@@ -15,7 +15,7 @@ Template Name: Home Page
 					<section>
 						<?php
 							$heroimage = get_field('hero_image');
-							if( !empty($image) ): 
+							if( !empty($heroimage) ): 
 								$hero_bg_image = $heroimage['url'];
 							else:
 								$hero_bg_image = get_bloginfo('template_directory') . "/assets/images/bg_hero.png";
@@ -118,7 +118,18 @@ Template Name: Home Page
 			<div class="row">
 				<div class="seven columns">
 					<section>
-						<div class="quote-container">
+						<?php
+							$quoteimage = get_field('hero_image');
+							if( !empty($quoteimage) ): 
+								$quote_bg_image = $quoteimage['url'];
+							else:
+								$quote_bg_image = "http://placehold.it/780x346/425968/000000";
+
+							endif;
+						?>
+
+
+						<div class="quote-container" style="background-image:url(<?php echo $quote_bg_image; ?>)">
 							<?php the_field('quote_text'); ?>
 						</div>
 					</section>
