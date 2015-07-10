@@ -7,9 +7,9 @@
 					<div class="eight columns alpha">
 						<?php 
 						$bgimage = get_sub_field('background_image');
-						if( !empty($image) ): 
+						if( !empty($bgimage) ): 
 							?>
-							<div class="intro-block" style="background-image:url(<?php echo $image['url']; ?>); background-position:center center; background-size: cover;">
+							<div class="intro-block" style="background-image:url(<?php echo $bgimage['url']; ?>); background-position:center center; background-size: cover;">
 							
 							<?php
 						else:
