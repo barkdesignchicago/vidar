@@ -26,10 +26,11 @@ Template Name: Blog
 				<section>
 				
 					<?php 
+					$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1; 
 					$args = array(
-						'posts_per_page' => '6'
+						'posts_per_page' => '6',
+						'paged' => $paged
 					);
-					
 					$the_query = new WP_Query($args); ?>
 					<?php 
 					if ( $the_query->have_posts() ) :
@@ -58,7 +59,15 @@ Template Name: Blog
 											<?php edit_post_link( __( 'Edit', 'ribs' ), "<span class=\"meta-sep\"> | </span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t" ) ?>
 										</div>
 										<div class="entry-content">
-											<?php the_content('<span class="read-more">Read more &raquo;</span>'); ?>
+											<?php
+												$ismore = @strpos( $post->post_content, '<!--more-->');
+												if($ismore) : 
+													the_content('<span class="read-more">Read more &raquo;</span>');
+												else : 
+													echo wp_trim_words( get_the_content(), 70, '...<p><a href="'.get_the_permalink($post->postID).'"><span class="read-more">Read more &raquo;</span></a></p>' );
+												endif;
+											?>
+
 										</div>
 										<div class="entry-categories">
 											<ul>
@@ -75,14 +84,23 @@ Template Name: Blog
 							</div>
 							<?php 
 						endwhile; 
+						?>
+						  <nav class="pagination">
+						    <div class="prev-posts-link">
+						      <?php echo get_next_posts_link( 'Older Entries', $the_query->max_num_pages ); // display older posts link ?>
+						    </div>
+						    <div class="next-posts-link">
+						      <?php echo get_previous_posts_link( 'Newer Entries' ); // display newer posts link ?>
+						    </div>
+						  </nav>
+						<?php
 					else: 
 						?>
 						<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 						<?php 
 					endif; 
 					?>
-					
-				</section>
+			</section>
 			</div>
 		</div>
 		<div class="four columns">
@@ -97,7 +115,6 @@ Template Name: Blog
 						// Nothing
 					endif;
 				?>
-
 				<?php get_sidebar(); ?>
 			</section>
 		</div>

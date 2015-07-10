@@ -19,7 +19,7 @@
 				53 West Jackson Blvd<br />
 				Suite 1627<br />
 				Chicago, Illinois 60604<br />
-				<a href="#">MAP --></a>
+				<a href="#">MAP &raquo;</a>
 			</div>
 			<div class="two columns contact">
 				p: <a href="tel:1312.895.4993">312.895.4993</a><br />

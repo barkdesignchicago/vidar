@@ -13,7 +13,17 @@ Template Name: Home Page
 			<div class="row">
 				<div class="eight columns">
 					<section>
-						<div id="home-hero" style="background-image:url(<?php bloginfo('template_directory'); ?>/assets/images/bg_hero.png); background-position:center center; background-size:cover;">
+						<?php
+							$heroimage = get_field('hero_image');
+							if( !empty($image) ): 
+								$hero_bg_image = $heroimage['url'];
+							else:
+								$hero_bg_image = get_bloginfo('template_directory') . "/assets/images/bg_hero.png";
+
+							endif;
+
+						?>
+						<div id="home-hero" style="background-image:url(<?php echo $hero_bg_image;?>); background-position:center center; background-size:cover;">
 							<div id="hero-text">
 								<header>
 									<?php the_field('intro_block'); ?>
@@ -118,7 +128,6 @@ Template Name: Home Page
 						<aside>
 							<div class="bio-container clearfix">
 								<h1><?php the_field('bio_title'); ?></h1>
-								<img src="http://placehold.it/120x155" class="scale-with-grid" />
 								<?php the_field('bio_text'); ?>
 							</div>
 						</aside>

@@ -46,6 +46,11 @@
 	padding: .75em .9em;
 	text-decoration: none;
 	zoom: 1; /* IE7 */
+	@include breakpoint(desktop) {
+		font-size:.9em !important;
+		padding: .5em .4em;
+	}
+
 }
 .menu a {
 	color: $blue_grey;

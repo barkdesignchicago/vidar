@@ -37,6 +37,15 @@ abbr{
 	color:$blue_grey;
 }
 
+.alignright{
+	float:right;
+	padding-left:15px;
+}
+.alignleft{
+	float:left;
+	padding-right:15px;
+}
+
 // #Navigation 
 
 .utility-container{
@@ -81,7 +90,6 @@ abbr{
 		font-weight:600;
 		font-size:16px;
 	}
-	
 	li {
 		a{
 			&:hover{
@@ -131,6 +139,15 @@ abbr{
 	}
 	.logo-image{	
 		margin-top:-18px;
+		@include breakpoint(desktop) {
+			margin-top:-12px;
+			a{
+				width:90%;
+				margin-right:0;
+				padding-right:0;
+			}
+		}
+
 	}
 	.logo-image-not-home{
 		margin-top:-11px;
@@ -138,8 +155,17 @@ abbr{
 			padding-right:.6em;
 			
 		}
+		@include breakpoint(desktop) {
+			margin-top:-8px;
+			a{
+				width:80%;
+				margin-right:0;
+				padding-right:0;
+			}
+		}
 		
 	}
+	
 }
 
 .nav{
@@ -148,6 +174,27 @@ abbr{
 	}	
 	li{
 		
+	}
+}
+
+.pagination {
+	padding:20px 0 60px;
+	a{
+		padding:10px 20px;
+		color:$blue_grey;
+		background-color:$yellow;
+		&:hover{
+			color:$white;
+		}
+	}
+	.prev-posts-link{
+		float:left;
+		width:50%;
+	}
+	.next-posts-link{
+		float:right;
+		width:50%;
+		text-align: right;
 	}
 }
 
@@ -202,11 +249,20 @@ abbr{
 				background-color:$yellow;
 				color:$blue_grey;
 			}
+			@include breakpoint(desktop) {
+				font-size:18px;
+				line-height:20px;
+			}
+			
 		}
 		a{
 			color:#fff;
 			font-weight:600;
 		}
+	}
+	@include breakpoint(desktop) {
+		font-size:14px;
+		line-height:18px;
 	}
 }
 
@@ -338,7 +394,7 @@ abbr{
 	}
 	.image{
 		text-align:right;
-		padding:25px 0 15px 25px;
+		padding:25px 15px 15px 25px;
 	}
 	.content{
 		color:$white;

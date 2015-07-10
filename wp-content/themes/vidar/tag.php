@@ -14,6 +14,9 @@
 			<div class="blog-box">
 				<section>
 					<?php 
+					global $query_string;
+					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;				
+					query_posts($query_string.'&paged=' . $paged); 
 					if ( have_posts() ) :
 						while ( have_posts() ) : the_post();
 							?>
@@ -40,7 +43,14 @@
 											<?php edit_post_link( __( 'Edit', 'ribs' ), "<span class=\"meta-sep\"> | </span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t" ) ?>
 										</div>
 										<div class="entry-content">
-											<?php the_content('<span class="read-more">Read more &raquo;</span>'); ?>
+											<?php
+												$ismore = @strpos( $post->post_content, '<!--more-->');
+												if($ismore) : 
+													the_content('<span class="read-more">Read more &raquo;</span>');
+												else : 
+													echo wp_trim_words( get_the_content(), 70, '...<p><a href="'.get_the_permalink($post->postID).'"><span class="read-more">Read more &raquo;</span></a></p>' );
+												endif;
+											?>
 										</div>
 										<div class="entry-categories">
 											<ul>
@@ -57,6 +67,17 @@
 							</div>
 							<?php 
 						endwhile; 
+						?>
+						  <nav class="pagination">
+						    <div class="prev-posts-link">
+						      <?php echo get_next_posts_link( 'Older Entries' ); // display older posts link ?>
+						    </div>
+						    <div class="next-posts-link">
+						      <?php echo get_previous_posts_link( 'Newer Entries' ); // display newer posts link ?>
+						    </div>
+						  </nav>
+						
+						<?php
 					else: 
 						?>
 						<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
