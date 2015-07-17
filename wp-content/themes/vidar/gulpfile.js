@@ -60,7 +60,7 @@ gulp.task('scripts', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
    browserSync.init({
-        proxy: "dev.vidarlaw.com.10.1.10.13.xip.io:8888",
+        proxy: "dev.vidarlaw.com.10.1.10.19.xip.io:8888",
         host: "localhost",
         port: 8888
     });

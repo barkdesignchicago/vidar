@@ -370,8 +370,18 @@ abbr{
 	border:7px solid $grey;
 	strong{
 		font-weight:600;
+		font-size:22px;
 		color:$blue_grey;
 		background-color:tint($yellow, 25%);
+	}
+	a{
+		@extend strong;
+	}
+	p{
+		padding-bottom:10px;
+		&:last-child{
+			padding:0;
+		}
 	}
 }
 
