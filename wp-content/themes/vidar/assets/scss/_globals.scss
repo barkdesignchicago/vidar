@@ -300,7 +300,7 @@ abbr{
 .quote-container{
 	padding:25px;
 	border:7px solid $blue_grey;
-	background-position: center center;
+	background-position:center top;
 	background-repeat:no-repeat;
 	p{
 		margin-bottom:5px;
@@ -368,6 +368,7 @@ abbr{
 	min-height:150px;
 	color:$white;
 	border:7px solid $grey;
+	background-color:$blue_grey;
 	strong{
 		font-weight:600;
 		font-size:22px;
