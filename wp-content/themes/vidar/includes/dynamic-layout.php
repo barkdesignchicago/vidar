@@ -9,12 +9,12 @@
 						$bgimage = get_sub_field('background_image');
 						if( !empty($bgimage) ): 
 							?>
-							<div class="intro-block" style="background-image:url(<?php echo $bgimage['url']; ?>); background-position:center center; background-size: cover;">
+							<div class="intro-block" style="background-image:url(<?php echo $bgimage['url']; ?>);">
 							
 							<?php
 						else:
 							?>
-							<div class="intro-block" style="background-image:url(<?php bloginfo('template_directory') ?>/assets/images/bg_intro_block_default.jpg); background-position:center center; background-size: cover;">
+							<div class="intro-block" style="background-image:url(<?php bloginfo('template_directory') ?>/assets/images/bg_intro_block_default.jpg);">
 							<?php								
 						endif;
 								the_sub_field('text');
