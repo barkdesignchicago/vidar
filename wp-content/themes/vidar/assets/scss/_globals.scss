@@ -267,7 +267,7 @@ abbr{
 	#hero-text{
 		position:absolute;
 		top:25%;
-		left:80px;
+		left:40px;
 		z-index:100;
 		color:#fff;
 		span{
@@ -378,6 +378,7 @@ abbr{
 	border:7px solid $blue_grey;
 	background-position:center top;
 	background-repeat:no-repeat;
+	background-color:$blue_grey;
 	p{
 		margin-bottom:5px;
 		font-size:22px;
