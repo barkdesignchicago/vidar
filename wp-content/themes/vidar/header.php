@@ -34,7 +34,17 @@
 	<!-- Core Header
 	================================================== -->
 	<?php wp_head(); ?>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+	<script>
+	  $(function () {
+	    $("#menu-main-menu").tinyNav({
+		     active: 'current_page_item',
+			 header: 'Main Menu',
+		    
+	    });
+	  });
+	</script>
 </head>
 <body <?php body_class(); ?>>
 

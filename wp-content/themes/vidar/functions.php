@@ -191,9 +191,9 @@ function wp_load_javascript_files() {
 	wp_enqueue_script( 'hoverIntent' );
 	wp_register_script( 'superfish', get_template_directory_uri() . '/assets/js/vendor/superfish.js', false, false, true );
 	wp_enqueue_script( 'superfish' );
-/*
 	wp_register_script( 'tinynav', get_template_directory_uri() . '/assets/js/vendor/tinynav.min.js', false, false, true );
 	wp_enqueue_script( 'tinynav' );
+/*
 	wp_register_script( 'wp_common', get_template_directory_uri() . '/assets/js/common.min.js', false, false, true );
 	wp_enqueue_script( 'wp_common' );		
 */
