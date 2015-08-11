@@ -57,9 +57,9 @@
 					<nav>
 						<div id="utility-nav" class="nav clearfix">
 							<ul class="social-media-links">
-								<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/assets/images/icon_facebook_grey.png" alt="icon_facebook_grey" width="10" height="18"></a></li>
-								<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/assets/images/icon_twitter_grey.png" alt="icon_twitter_grey" width="21" height="17"></a></li>
-								<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/assets/images/icon_linkedin_grey.png" alt="icon_linkedin_grey" width="18" height="18"></a></li>
+								<li><a href="https://www.facebook.com/VidarLaw?skip_nax_wizard=true&ref_type=logout_gear" target="_BLANK"><img src="<?php bloginfo('template_directory'); ?>/assets/images/icon_facebook_grey.png" alt="Vidar Facebook Profile" width="10" height="18"></a></li>
+								<li><a href="https://twitter.com/VidarLaw" target="_BLANK"><img src="<?php bloginfo('template_directory'); ?>/assets/images/icon_twitter_grey.png" alt="Vidar Twitter Profile" width="21" height="17"></a></li>
+								<li><a href="https://www.linkedin.com/company/vidar-law-group?trk=biz-companies-cym" target="_BLANK"><img src="<?php bloginfo('template_directory'); ?>/assets/images/icon_linkedin_grey.png" alt="Vidar LinkedIn Page" width="18" height="18"></a></li>
 							</ul>
 							<?php wp_nav_menu( array( 'theme_location' => 'utility-menu', 'menu_class' => 'utility-menu' ) ); ?>
 						</div>
